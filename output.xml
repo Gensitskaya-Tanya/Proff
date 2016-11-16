@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+    <book>
+        <author>Author1</author>
+        <price>14.55</price>
+        <publish_date>2016-11-16T12:07:12.934+02:00</publish_date>
+        <title>Title1</title>
+    </book>
+    <book>
+        <author>Author2</author>
+        <price>66.0</price>
+        <publish_date>2016-11-16T12:07:12.934+02:00</publish_date>
+        <title>Title2</title>
+    </book>
+</catalog>
