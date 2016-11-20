@@ -53,7 +53,7 @@ public class Main {
         String result = performRequest(request);
         System.out.println(result);
 
-        String result = performRequest(request);
+
 
 
         Gson gson = new GsonBuilder().create();
