@@ -9,12 +9,49 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/** Отправили запрос
+ * получили ответ в виде JSON
+ * распарсили в обьект
+ * обьект перевели обратно в     JSON
+ *
+ *
+ * {
+ * "query":{
+ *      "count":2,
+ *      "created":"2016-11-19T14:07:50Z",
+ *      "lang":"en-US",
+ *      "results":{
+ *          "rate":
+ *              [{
+ *               "id":"USDEUR",
+ *               "Name":"USD/EUR",
+ *               "Rate":"0.9443",
+ *               "Date":"11/18/2016",
+ *               "Time":"10:33pm",
+ *               "Ask":"0.9448",
+ *               "Bid":"0.9443"},
+ *              {
+ *               "id":"USDUAH",
+ *               "Name":"USD/UAH",
+ *               "Rate":"25.8500",
+ *               "Date":"11/18/2016",
+ *               "Time":"10:26pm",
+ *               "Ask":"26.1000",
+ *               "Bid":"25.8500"}
+ *               ]
+ *              }
+ *         }
+ * }
+ */
 public class Main {
     
     public static void main(String[] args) throws Exception {
 
         String request = "http://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20" +
                 "yahoo.finance.xchange%20where%20pair%20in%20(\"USDEUR\",%20\"USDUAH\")&env=store://datatables.org/alltableswithkeys";
+
+        String result = performRequest(request);
+        System.out.println(result);
 
         String result = performRequest(request);
 

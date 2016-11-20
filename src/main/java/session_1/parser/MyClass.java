@@ -13,7 +13,7 @@ public class MyClass {
 
 	public static void main(String[] args) {
 		try {
-			File xmlFile = new File("F:\\_Prog\\Proff\\1.xml");
+			File xmlFile = new File("F:\\_Prog\\Proff\\src\\main\\java\\session_1\\parser\\1.xml");
 
 			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
