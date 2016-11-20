@@ -12,13 +12,14 @@ import java.net.URL;
  * режиме XML (format=xml).
  */
 public class Main {
+	private static String path = "output.xml";
 	public static void main(String[] args) throws Exception {
 		String request = "http://query.yahooapis.com/v1/public/yql?format=xml&q=select%20*%20from%20" +
 				"yahoo.finance.xchange%20where%20pair%20in%20(\"USDEUR\",%20\"USDUAH\")&env=store://datatables.org/alltableswithkeys";
 		performRequestAndWriteToFile(request);
 		try {
 			Query query;
-			File file = new File("F:\\_Prog\\Proff\\src\\main\\java\\hw1\\parserYahooFinanceXmlJAXB\\output.xml");
+			File file = new File(path);
 			JAXBContext jaxbContext = JAXBContext.newInstance(Query.class);
 
 			// читаем из файла
@@ -36,7 +37,7 @@ public class Main {
 		HttpURLConnection http = (HttpURLConnection) url.openConnection();
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(http.getInputStream()));
-			BufferedWriter bw = new BufferedWriter(new FileWriter(new File("F:\\_Prog\\Proff\\src\\main\\java\\hw1\\parserYahooFinanceXmlJAXB\\output.xml")));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(path)));
 			char[] buf = new char[1000000];
 			int r;
 			do {
