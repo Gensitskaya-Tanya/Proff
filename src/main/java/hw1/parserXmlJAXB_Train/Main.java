@@ -1,4 +1,4 @@
-package hw1.parserXMLTrain;
+package hw1.parserXmlJAXB_Train;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -31,7 +31,7 @@ public class Main {
 		trains.addTrain(train5);
 
 		try {
-			File file = new File("F:\\_Prog\\Proff\\src\\main\\java\\hw1\\parserXMLTrain\\output.xml");
+			File file = new File("F:\\_Prog\\Proff\\src\\main\\java\\hw1\\parserXmlJAXB_Train\\output.xml");
 			JAXBContext jaxbContext = JAXBContext.newInstance(Trains.class);
 			Marshaller marshaller = jaxbContext.createMarshaller();
 

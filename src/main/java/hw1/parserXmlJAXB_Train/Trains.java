@@ -1,4 +1,4 @@
-package hw1.parserXMLTrain;
+package hw1.parserXmlJAXB_Train;
 
 
 import javax.xml.bind.annotation.XmlElement;
