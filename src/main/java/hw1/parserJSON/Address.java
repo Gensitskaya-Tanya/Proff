@@ -6,6 +6,17 @@ public class Address {
 	private String city;
 	private String street;
 
+	public String getCountry() {
+		return country;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public String getStreet() {
+		return street;
+	}
 
 	@Override
 	public String toString() {
@@ -15,4 +26,5 @@ public class Address {
 				", street='" + street + '\'' +
 				'}';
 	}
+
 }

@@ -10,6 +10,25 @@ public class JSON {
 	private String[] sites;
 	private Address address;
 
+	public String getName() {
+		return name;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public String[] getPhones() {
+		return phones;
+	}
+
+	public String[] getSites() {
+		return sites;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
 
 	@Override
 	public String toString() {
