@@ -15,7 +15,7 @@ public class Main {
         catalog.add(new Book("Author2", "Title2", 66, new Date()));
 
         try {
-            File file = new File("F:\\_Prog\\Proff\\src\\main\\java\\session_1\\jaxb\\output.xml");
+            File file = new File("E:\\Other\\Proff\\src\\main\\java\\session_1\\jaxb\\yahooFinanceJAXB.xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(Catalog.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
 

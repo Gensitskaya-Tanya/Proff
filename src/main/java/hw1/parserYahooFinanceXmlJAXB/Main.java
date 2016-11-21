@@ -12,7 +12,7 @@ import java.net.URL;
  * режиме XML (format=xml).
  */
 public class Main {
-	private static String path = "output.xml";
+	private static String path = Main.class.getResource("/hw1/yahooFinanceJAXB.xml").getPath();
 	public static void main(String[] args) throws Exception {
 		String request = "http://query.yahooapis.com/v1/public/yql?format=xml&q=select%20*%20from%20" +
 				"yahoo.finance.xchange%20where%20pair%20in%20(\"USDEUR\",%20\"USDUAH\")&env=store://datatables.org/alltableswithkeys";
@@ -35,9 +35,8 @@ public class Main {
 	private static void performRequestAndWriteToFile(String urlStr) throws IOException {
 		URL url = new URL(urlStr);
 		HttpURLConnection http = (HttpURLConnection) url.openConnection();
-		try {
-			BufferedReader br = new BufferedReader(new InputStreamReader(http.getInputStream()));
-			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(path)));
+		try(BufferedReader br = new BufferedReader(new InputStreamReader(http.getInputStream()));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(path)))) {
 			char[] buf = new char[1000000];
 			int r;
 			do {

@@ -16,6 +16,7 @@ import java.util.List;
  * Написать код для добавления новых поездов в существующий XML.
  */
 public class Main {
+	private static String path =  Main.class.getResource("/hw1/output.xml").getPath();
 	public static void main(String[] args) {
 		Train train1 = new Train("Kiev", "Lviv", "11.12.2016", "12:30", 1);
 		Train train2 = new Train("Kiev", "Lviv", "11.12.2016", "12:30", 2);
@@ -31,7 +32,8 @@ public class Main {
 		trains.addTrain(train5);
 
 		try {
-			File file = new File("F:\\_Prog\\Proff\\src\\main\\java\\hw1\\parserXmlJAXB_Train\\output.xml");
+			File file = new File(path);
+
 			JAXBContext jaxbContext = JAXBContext.newInstance(Trains.class);
 			Marshaller marshaller = jaxbContext.createMarshaller();
 

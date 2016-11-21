@@ -22,9 +22,11 @@ import java.io.IOException;
  * }
  */
 public class Main {
+
+	private static String path =  Main.class.getResource("/hw1/json.txt").getPath();
 	public static void main(String[] args) throws Exception {
 
-		String data = readDataFromFile("F:\\_Prog\\Proff\\src\\main\\java\\hw1\\parserJSON\\json.txt");
+		String data = readDataFromFile(path);
 
 		Gson gson = new GsonBuilder().create();
 		JSON json = (JSON) gson.fromJson(data, JSON.class);
