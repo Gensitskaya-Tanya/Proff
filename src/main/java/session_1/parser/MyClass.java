@@ -4,16 +4,17 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import session_1.jaxb.Main;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
 public class MyClass {
-
+	private static String path = Main.class.getResource("/session_1/1.xml").getPath();
 	public static void main(String[] args) {
 		try {
-			File xmlFile = new File("F:\\_Prog\\Proff\\src\\main\\java\\session_1\\parser\\1.xml");
+			File xmlFile = new File(path);
 
 			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
